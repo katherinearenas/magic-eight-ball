@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import QuestionForm from "./components/Form";
+// import QuestionForm from "./components/Form";
 // import EightBall from "./components/EightBall";
 
 const answers = [
