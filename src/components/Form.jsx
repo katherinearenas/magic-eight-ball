@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-// function getAnswer(props){
+// function getRandomAnswer(){
 //     const [answer, setAnswer] = useState("");
 
 //     const answers = [
@@ -25,24 +25,33 @@ import React, { useState } from "react";
 //         "Outlook not so good.",
 //         "Very doubtful."
 //     ];
-// const getRandomAnswer = () => {
+// const getAnswer = () => {
 //     const randomIndex = Math.floor(Math.random() * answers.length);
 //     setAnswer(answers[randomIndex]);
 // }
+//};
 
-// };
 
-
-function QuestionForm({getRandomAnswer}){
+function QuestionForm(){
     const [question, setQuestion] = useState("");
-    // const handleInputChange = (e) => {
+    const handleInputChange = (e) => {
+      e.preventDefault();
+      
+      const { target } = e;
+      // const inputName = target.name
+      const inputValue = target.value;
+      
+      if (inputValue) {
+        setQuestion(inputValue);
+      };
+
     // //     // Getting the value and name of the input which triggered the change
     //     const { target } = e;
     //     const inputType = target.name;
     //     const inputValue = target.value;
     //     console.log(inputType, inputValue);
     //     return console.log(target) 
-    //   };
+      };
 
     
 
@@ -50,7 +59,7 @@ function QuestionForm({getRandomAnswer}){
             // Preventing the default behavior of the form submit (which is to refresh the page)
             e.preventDefault()};
             if (question.trim()){
-              getRandomAnswer();
+              // getRandomAnswer();
               setQuestion("");
             }
           
@@ -62,21 +71,16 @@ return(
       <p>For best results ask a yes or no question.</p>
       <form className="form" onSubmit={handleFormSubmit}>
         <input
-          value={question}
           name="question"
-          onChange={(e) => setQuestion(e.target.value)}
+          value={question}
+          onChange={handleInputChange}
           type="text"
           placeholder="Will I have a good weekend?"
         />
         <button type="submit">
-          Submit
+          Shake!
         </button>
       </form>
-      {/* {errorMessage && (
-        <div>
-          <p className="error-text">{errorMessage}</p>
-        </div>
-      )} */}
     </div>
   );
 }

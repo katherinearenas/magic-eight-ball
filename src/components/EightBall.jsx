@@ -1,4 +1,3 @@
-// MagicBall.js
 import React from "react";
 
 function EightBall({ answer }) {
