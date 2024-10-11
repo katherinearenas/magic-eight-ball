@@ -1,0 +1,54 @@
+.container{
+    justify-content: center;
+    align-items: center;
+    margin-left: 50 px;
+}
+.magic-ball{
+    height: 300px;
+    width: 300px;
+    /* background-color: black; */
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at 100px 100px, #4d5257, #000);
+    
+
+}
+
+.magic-ball::before{
+    content: "8";
+    font-size: 150px;
+    display: block;
+    
+}
+
+.answer{
+    position:absolute;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: rgb(27, 30, 77);
+    border:4px white inset;
+    justify-items: center;
+}
+
+/* .answer p{
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 65.5px 88px 65.5px;
+    border-color: transparent transparent #425DB9 transparent;
+    transform: rotate(180deg);
+} */
+.answer p{
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 103.9px 60px 0 60px;
+    border-color: #0000ff transparent transparent transparent;
+    transform: rotate(0deg);
+    justify-content: center;
+    color: whitesmoke
+ }

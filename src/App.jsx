@@ -1,6 +1,6 @@
-import React, {useState} from "react";
-// import QuestionForm from "./components/Form";
-// import EightBall from "./components/EightBall";
+import {useState} from "react";
+import Form from "./components/Form";
+import EightBall from "./components/EightBall";
 
 const answers = [
   "It is certain.",
@@ -47,19 +47,8 @@ function App() {
   return (
     <div className="App">
       <h1>Magic 8 Ball</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          name='question'
-          type="text"
-          placeholder="Ask a question"
-          value={question}
-          onChange={handleInputChange}
-        />
-        <button type="submit">Shake!</button>
-      </form>
-      <div className="ball">
-        <p>{answer || "Ask a question and shake the ball!"}</p>
-      </div>
+      <Form handleSubmit={handleSubmit} handleInputChange={handleInputChange} question={question}/>
+     <EightBall answer={answer}/>
     </div>
   );
 }
